@@ -30,7 +30,7 @@ const logEl = document.getElementById('log');
 const log = text => logEl.innerHTML = `${logEl.innerHTML}\n${text}`;
 
 // wrap fetch call so that it is traced
-zipkinFetch('http://zk-frontend.eu-gb.mybluemix.net')
+zipkinFetch('/')
     .then(response => (response.text()))
     .then(text => log(text))
     .catch(err => log(`Failed:\n${err.stack}`));

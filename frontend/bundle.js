@@ -32,7 +32,7 @@ const logEl = document.getElementById('log');
 const log = text => logEl.innerHTML = `${logEl.innerHTML}\n${text}`;
 
 // wrap fetch call so that it is traced
-zipkinFetch('http://zk-frontend.eu-gb.mybluemix.net')
+zipkinFetch('/')
     .then(response => (response.text()))
     .then(text => log(text))
     .catch(err => log(`Failed:\n${err.stack}`));
@@ -2094,7 +2094,7 @@ module.exports = { Sampler: Sampler, CountingSampler: CountingSampler, neverSamp
 (function (process){
 var zipkinBaseUrl;
 if (process.env.ZIPKIN_URL) {
-    zipkinBaseUrl = process.env.ZIPKIN_URL;
+    zipkinBaseUrl = 'http://' + process.env.ZIPKIN_URL;
 } else {
     zipkinBaseUrl = 'http://localhost:9411';
 }

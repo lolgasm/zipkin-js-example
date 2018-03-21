@@ -1,0 +1,7 @@
+---
+applications:
+- name: app-frontend
+  command: node frontend.js
+  path: .
+  memory: 28M
+  buildpack: sdk-for-nodejs

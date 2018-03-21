@@ -1,0 +1,7 @@
+---
+applications:
+- name: app-backend
+  command: node backend.js
+  path: .
+  memory: 28M
+  buildpack: sdk-for-nodejs
